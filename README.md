@@ -1,60 +1,81 @@
-# 🏛️ Agenzia Multi-Agente & Academic Paper Suite
+# agenzia-multiagente — Skill e Plugin per Claude
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Antigravity Plugin](https://img.shields.io/badge/Antigravity-Plugin%20v1.1-purple.svg)](https://github.com/Marcelloguida00/multiagent-academic-paper)
-[![Slash Command](https://img.shields.io/badge/Slash%20Command-%2Fagenzia--multiagente-orange.svg)]()
-[![Anti-AI Filter](https://img.shields.io/badge/Anti--AI%20Filter-%2Fsembra--ai-brightgreen.svg)]()
+[![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill%20%26%20Plugin-orange.svg)](https://claude.com/claude-code)
+[![Slash Command](https://img.shields.io/badge/Slash%20Command-%2Fagenzia--multiagente-blueviolet.svg)]()
+[![Anti-AI Quality Gate](https://img.shields.io/badge/Quality%20Gate-%2Fsembra--ai-brightgreen.svg)]()
 
-Suite completa a plugin che implementa **`/agenzia-multiagente`** per orchestrare una squadra autonoma di agenti specializzati nella ricerca bibliografica avanzata, formalizzazione concettuale e redazione di **paper accademici peer-reviewed** (stile IEEE / ACM / Springer), integrata nativamente con il filtro anti-AI e de-slopping **`/sembra-ai`**.
+Una skill per **Claude Code** ([claude.com/claude-code](https://claude.com/claude-code)) e **Claude.ai** che trasforma Claude in un'**agenzia autonoma multi-agente** di ricerca accademica. 
+
+Conduce la scansione dello stato dell'arte (SOTA), normalizza la terminologia scientifica, formalizza i modelli computazionali e redige **paper scientifici peer-reviewed** (in stile IEEE / ACM / LaTeX), sottoponendo obbligatoriamente ogni paragrafo al filtro di humanization e de-slopping **`/sembra-ai`** per eliminare ogni impronta artificiale di scrittura.
 
 ---
 
-## ⚡ Comandi Slash Principali
+## ⚡ Comandi Slash Nativi per Claude Code
 
 | Comando | Descrizione |
 | :--- | :--- |
-| **`/agenzia-multiagente`** | Dispiega e coordina i 5 agenti specialistici per condurre la ricerca bibliografica SOTA, standardizzare la terminologia e redigere il paper scientifico. |
-| **`/sembra-ai`** | Filtro di qualità anti-AI: revisiona ed elimina cliché, formule fisse, pattern simmetrici e regolarità tipiche degli LLM, garantendo uno stile autentico, critico e umano. |
+| **`/agenzia-multiagente`** | Avvia il coordinatore multi-agente per la ricerca SOTA, la bonifica lessicale, la redazione IMRaD e la verifica delle citazioni. |
+| **`/sembra-ai`** | Filtro anti-AI: elimina formule trite, cliché degli LLM, regolarità di punteggiatura e varia il ritmo (burstiness) per garantire una voce accademica umana. |
 
 ---
 
-## 👥 Ruoli dell'Agenzia (`/agenzia-multiagente`)
+## 👥 I Ruoli dell'Agenzia Multi-Agente
 
-1. **Lead Academic Researcher**: Scansione SOTA su repository ufficiali (ArXiv, IEEE Xplore, NeurIPS, ACM). Tracciamento di fonti reali con DOI e metadati verificabili.
-2. **System Ontologist**: Bonifica della nomenclatura. Conversione di gergo o termini informali in rigorosa tassonomia accademica (*Decentralized Coordination Protocols*, *Asynchronous Blackboard Memory*, ecc.).
-3. **Academic Author**: Redazione formale secondo lo standard IMRaD. **Regola aurea**: zero menzioni di tool interni, prompt o skill software nel testo scientifico.
-4. **Anti-AI Quality Gatekeeper (`/sembra-ai`)**: Revisione stilistica obbligatoria prima di approvare qualsiasi sezione.
-5. **Meta-Tool Engineer**: Generazione e integrazione di script analitici o skill mancanti necessarie alla ricerca.
+Claude suddivide autonomamente il lavoro tra 5 ruoli specializzati:
 
----
-
-## 🛡️ Regole Operative Globali (`rules/AGENTS.md`)
-
-- **Nessuna menzione di tool interni**: L'architettura e la metodologia del paper vengono descritte unicamente in termini algoritmici, computazionali e matematici.
-- **Font e Tipografia Accademica**: Formattazione rigorosa per compilazione LaTeX (font Computer Modern o Times New Roman).
-- **Controllo Bibliografico Rigoroso**: Ogni affermazione deve essere supportata da una fonte reale e verificabile.
-- **Passaggio obbligatorio in `/sembra-ai`**: Nessun paragrafo viene considerato definitivo senza aver superato il controllo di de-slopping.
+1. **Lead Academic Researcher & Fact-Checker**: Scansiona la letteratura (ArXiv, IEEE Xplore, ACM, NeurIPS, ICLR). Cataloga solo fonti autentiche con DOI e metadati verificabili.
+2. **System Ontologist**: Bonifica il lessico: sostituisce termini colloquiali o gergali con una tassonomia accademica formale (*Decentralized Coordination Protocols*, *Asynchronous Blackboard Memory*, *Hierarchical Supervisor-Worker Topologies*).
+3. **Academic Author**: Redige il testo secondo lo standard scientifico IMRaD. **Regola aurea**: zero menzioni di tool interni, prompt o skill software nel paper.
+4. **Anti-AI Quality Gatekeeper (`/sembra-ai`)**: Revisiona ogni sezione prima del rilascio per eliminare cliché e cadenze artificiali.
+5. **Meta-Tool Engineer**: Formalizza componenti e script analitici come moduli algoritmici all'interno del manoscritto.
 
 ---
 
-## 🚀 Installazione Rapida
+## 🛡️ Regole Operative Inviolabili
 
-Clona la repository nella cartella dei plugin globali di Antigravity:
+- **Nessun leakage di tool o prompt**: Il testo finale descrive solo metodologie formali, architetture computazionali e modelli teorici. Nessuna menzione di Claude, skill software o prompt di sistema.
+- **Font e Tipografia Accademica**: Strutturato per la compilazione in LaTeX con i font standard delle conferenze (Computer Modern / Times New Roman).
+- **Controllo Bibliografico Reale**: Tutte le fonti citate devono essere reali e rintracciabili tramite DOI o ArXiv ID.
+- **Passaggio Obbligatorio in `/sembra-ai`**: Nessun paragrafo viene finalizzato senza aver superato il de-slopping stilistico.
+
+---
+
+## 📦 Installazione in Claude
+
+### 1. Claude Code (Installazione Globale Personale)
+Clona la skill nella cartella delle skill di Claude Code:
 
 ```bash
-git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git ~/.gemini/config/plugins/multiagent-academic-paper
+git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git ~/.claude/skills/agenzia-multiagente
 ```
 
-Oppure all'interno di un singolo progetto:
+Per abilitare anche i comandi slash rapidi (`/agenzia-multiagente` e `/sembra-ai`):
 ```bash
-git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git .gemini/plugins/multiagent-academic-paper
+mkdir -p ~/.claude/commands
+cp ~/.claude/skills/agenzia-multiagente/.claude/commands/*.md ~/.claude/commands/
 ```
+
+### 2. Claude Code (Per un Singolo Progetto)
+Se desideri utilizzarla all'interno di una cartella o repository specifica:
+
+```bash
+git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git .claude/skills/agenzia-multiagente
+mkdir -p .claude/commands
+cp .claude/skills/agenzia-multiagente/.claude/commands/*.md .claude/commands/
+```
+
+Claude Code rileverà automaticamente anche il file `CLAUDE.md` presente nella radice.
+
+### 3. Claude.ai (Web o Desktop)
+1. Apri un **Project** su Claude.ai.
+2. Aggiungi il file `SKILL.md` o `CLAUDE.md` ai **Project Knowledge** o copia il testo nelle **Custom Instructions**.
 
 ---
 
-## 📋 Master Prompt Completo di Esecuzione
+## 📋 Master Prompt di Avvio Rapido
 
-Copia e invia il seguente prompt per avviare il processo completo:
+Incolla questo prompt in Claude Code o Claude.ai per iniziare:
 
 ```markdown
 # MISSION: ORCHESTRAZIONE MULTI-AGENTE PER LA REDAZIONE DI UN ACCADEMIC PAPER SCIENTIFICO (/agenzia-multiagente)
@@ -139,4 +160,4 @@ Attendi la conferma dell'utente prima di passare alla stesura completa.
 
 ## 📄 Licenza
 
-Rilasciato sotto licenza MIT. Libero per uso di ricerca, accademico e industriale.
+Rilasciato sotto licenza MIT.
