@@ -6,24 +6,29 @@ COMMANDS_DIR="$HOME/.claude/commands"
 
 mkdir -p "$SKILLS_DIR" "$COMMANDS_DIR"
 
-TARGET="$SKILLS_DIR/agenzia-multiagente"
+MAIN_TARGET="$SKILLS_DIR/agenzia-multiagente"
 
-if [ -d "$TARGET" ]; then
-    echo "Aggiorno il repository esistente..."
-    git -C "$TARGET" pull
+if [ -d "$MAIN_TARGET" ]; then
+    echo "Aggiorno il repository agenzia-multiagente..."
+    git -C "$MAIN_TARGET" pull
 else
     echo "Clono agenzia-multiagente..."
-    git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git "$TARGET"
+    git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git "$MAIN_TARGET"
 fi
 
-# 1. Installa sembra-ai come skill autonoma di primo livello
-mkdir -p "$SKILLS_DIR/sembra-ai"
-cp "$TARGET/skills/sembra-ai/SKILL.md" "$SKILLS_DIR/sembra-ai/SKILL.md"
-echo "✓ Skill sembra-ai installata in $SKILLS_DIR/sembra-ai"
+# Elenco completo delle 5 skill specializzate oltre all'orchestratore
+SKILL_LIST=("sembra-ai" "ricerca-accademica" "scrittura-paper" "bonifica-tassonomia" "design-scientifico")
 
-# 2. Installa i comandi slash globali
-cp "$TARGET/.claude/commands/"*.md "$COMMANDS_DIR/"
-echo "✓ Comandi slash /agenzia-multiagente e /sembra-ai installati in $COMMANDS_DIR"
+for skill in "${SKILL_LIST[@]}"; do
+    mkdir -p "$SKILLS_DIR/$skill"
+    cp "$MAIN_TARGET/skills/$skill/SKILL.md" "$SKILLS_DIR/$skill/SKILL.md"
+    echo "✓ Skill $skill installata in $SKILLS_DIR/$skill"
+done
+
+# Installa tutti i comandi slash globali
+cp "$MAIN_TARGET/.claude/commands/"*.md "$COMMANDS_DIR/"
+echo "✓ Comandi slash installati in $COMMANDS_DIR"
 
 echo ""
-echo "Installazione completata con successo! Riavvia Claude Code o apri una nuova sessione."
+echo "Installazione completata! Tutte le 6 skill (incluso design-scientifico) sono ora operative."
+echo "Riavvia Claude Code o apri una nuova sessione con 'claude'."

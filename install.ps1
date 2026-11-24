@@ -1,31 +1,36 @@
-﻿# Script di installazione automatica per Claude Code (Windows PowerShell)
+﻿# Script di installazione automatica completa per Claude Code (Windows PowerShell)
 $ErrorActionPreference = "Stop"
 
 $skillsDir = "$HOME\.claude\skills"
 $commandsDir = "$HOME\.claude\commands"
 
-# Assicura le cartelle
+# Crea le cartelle necessarie
 New-Item -ItemType Directory -Force -Path $skillsDir | Out-Null
 New-Item -ItemType Directory -Force -Path $commandsDir | Out-Null
 
-$target = "$skillsDir\agenzia-multiagente"
+$mainTarget = "$skillsDir\agenzia-multiagente"
 
-if (Test-Path $target) {
-    Write-Host "Aggiorno il repository esistente..."
-    git -C $target pull
+if (Test-Path $mainTarget) {
+    Write-Host "Aggiorno il repository agenzia-multiagente..."
+    git -C $mainTarget pull
 } else {
     Write-Host "Clono agenzia-multiagente..."
-    git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git $target
+    git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git $mainTarget
 }
 
-# 1. Installa sembra-ai come skill autonoma di primo livello
-$sembraAiTarget = "$skillsDir\sembra-ai"
-New-Item -ItemType Directory -Force -Path $sembraAiTarget | Out-Null
-Copy-Item "$target\skills\sembra-ai\SKILL.md" "$sembraAiTarget\SKILL.md" -Force
-Write-Host "✓ Skill sembra-ai installata in: $sembraAiTarget"
+# Elenco completo delle 5 skill specializzate oltre all'orchestratore
+$skillList = @("sembra-ai", "ricerca-accademica", "scrittura-paper", "bonifica-tassonomia", "design-scientifico")
 
-# 2. Installa i comandi slash globali in ~/.claude/commands
-Copy-Item "$target\.claude\commands\*.md" "$commandsDir\" -Force
-Write-Host "✓ Comandi slash /agenzia-multiagente e /sembra-ai installati in: $commandsDir"
+foreach ($skill in $skillList) {
+    $targetFolder = "$skillsDir\$skill"
+    New-Item -ItemType Directory -Force -Path $targetFolder | Out-Null
+    Copy-Item "$mainTarget\skills\$skill\SKILL.md" "$targetFolder\SKILL.md" -Force
+    Write-Host "✓ Skill $skill installata in: $targetFolder"
+}
 
-Write-Host "`nInstallazione completata con successo! Riavvia Claude Code o apri una nuova sessione."
+# Installa tutti i comandi slash globali in ~/.claude/commands
+Copy-Item "$mainTarget\.claude\commands\*.md" "$commandsDir\" -Force
+Write-Host "✓ Comandi slash installati in: $commandsDir"
+
+Write-Host "`nInstallazione completata! Tutte le 6 skill (incluso design-scientifico) sono ora operative."
+Write-Host "Riavvia Claude Code (o apri una nuova sessione con 'claude') per iniziare."
