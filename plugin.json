@@ -1,0 +1,11 @@
+{
+  "name": "multiagent-academic-paper",
+  "displayName": "Multi-Agent Academic Paper & Research Agency",
+  "version": "1.0.0",
+  "description": "Agenzia multi-agente per la ricerca bibliografica rigorosa, la formalizzazione teorica e la stesura di paper accademici scientifici, integrata con filtro Anti-AI (de-slop /sembra-ai).",
+  "suggestedPrompts": [
+    "Avvia l'agenzia multi-agente per ricercare e scrivere un paper accademico sui sistemi multi-agente",
+    "Esegui la scansione dello stato dell'arte e genera la tabella di bonifica terminologica",
+    "Revisiona la bozza del paper con il filtro /sembra-ai per eliminare ogni traccia stilistica di AI"
+  ]
+}
