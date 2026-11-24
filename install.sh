@@ -16,12 +16,22 @@ else
     git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git "$MAIN_TARGET"
 fi
 
-# Elenco completo delle 5 skill specializzate oltre all'orchestratore
-SKILL_LIST=("sembra-ai" "ricerca-accademica" "scrittura-paper" "bonifica-tassonomia" "design-scientifico")
+# Elenco completo delle skill modulari
+SKILL_LIST=(
+    "sembra-ai"
+    "ricerca-accademica"
+    "scrittura-paper"
+    "bonifica-tassonomia"
+    "design-scientifico"
+    "legal-audit"
+    "security-audit"
+    "crittografia"
+    "ig-audit"
+)
 
 for skill in "${SKILL_LIST[@]}"; do
     mkdir -p "$SKILLS_DIR/$skill"
-    cp "$MAIN_TARGET/skills/$skill/SKILL.md" "$SKILLS_DIR/$skill/SKILL.md"
+    cp -r "$MAIN_TARGET/skills/$skill/"* "$SKILLS_DIR/$skill/"
     echo "✓ Skill $skill installata in $SKILLS_DIR/$skill"
 done
 
@@ -30,5 +40,5 @@ cp "$MAIN_TARGET/.claude/commands/"*.md "$COMMANDS_DIR/"
 echo "✓ Comandi slash installati in $COMMANDS_DIR"
 
 echo ""
-echo "Installazione completata! Tutte le 6 skill (incluso design-scientifico) sono ora operative."
+echo "Installazione completata! Tutte le skill (inclusi audit e crittografia) sono ora operative."
 echo "Riavvia Claude Code o apri una nuova sessione con 'claude'."

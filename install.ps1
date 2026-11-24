@@ -4,7 +4,6 @@ $ErrorActionPreference = "Stop"
 $skillsDir = "$HOME\.claude\skills"
 $commandsDir = "$HOME\.claude\commands"
 
-# Crea le cartelle necessarie
 New-Item -ItemType Directory -Force -Path $skillsDir | Out-Null
 New-Item -ItemType Directory -Force -Path $commandsDir | Out-Null
 
@@ -18,13 +17,23 @@ if (Test-Path $mainTarget) {
     git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git $mainTarget
 }
 
-# Elenco completo delle 5 skill specializzate oltre all'orchestratore
-$skillList = @("sembra-ai", "ricerca-accademica", "scrittura-paper", "bonifica-tassonomia", "design-scientifico")
+# Elenco completo delle skill modulari
+$skillList = @(
+    "sembra-ai", 
+    "ricerca-accademica", 
+    "scrittura-paper", 
+    "bonifica-tassonomia", 
+    "design-scientifico",
+    "legal-audit",
+    "security-audit",
+    "crittografia",
+    "ig-audit"
+)
 
 foreach ($skill in $skillList) {
     $targetFolder = "$skillsDir\$skill"
     New-Item -ItemType Directory -Force -Path $targetFolder | Out-Null
-    Copy-Item "$mainTarget\skills\$skill\SKILL.md" "$targetFolder\SKILL.md" -Force
+    Copy-Item "$mainTarget\skills\$skill\*" "$targetFolder\" -Recurse -Force
     Write-Host "✓ Skill $skill installata in: $targetFolder"
 }
 
@@ -32,5 +41,5 @@ foreach ($skill in $skillList) {
 Copy-Item "$mainTarget\.claude\commands\*.md" "$commandsDir\" -Force
 Write-Host "✓ Comandi slash installati in: $commandsDir"
 
-Write-Host "`nInstallazione completata! Tutte le 6 skill (incluso design-scientifico) sono ora operative."
+Write-Host "`nInstallazione completata! Tutte le skill (inclusi audit e crittografia) sono ora operative."
 Write-Host "Riavvia Claude Code (o apri una nuova sessione con 'claude') per iniziare."
