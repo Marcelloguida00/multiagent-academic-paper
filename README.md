@@ -20,6 +20,45 @@ Conduce la scansione dello stato dell'arte (SOTA), normalizza la terminologia sc
 
 ---
 
+## 📦 Installazione Rapida (1 Click / 1 Comando)
+
+### Windows (PowerShell)
+Apri PowerShell ed esegui:
+```powershell
+irm https://raw.githubusercontent.com/Marcelloguida00/multiagent-academic-paper/main/install.ps1 | iex
+```
+
+Oppure manualmente se hai già clonato:
+```powershell
+# 1. Copia sembra-ai come skill autonoma di primo livello
+mkdir "$HOME\.claude\skills\sembra-ai" -Force
+copy "$HOME\.claude\skills\agenzia-multiagente\skills\sembra-ai\SKILL.md" "$HOME\.claude\skills\sembra-ai\SKILL.md"
+
+# 2. Copia i comandi slash globali
+mkdir "$HOME\.claude\commands" -Force
+copy "$HOME\.claude\skills\agenzia-multiagente\.claude\commands\*.md" "$HOME\.claude\commands\"
+```
+
+---
+
+### Mac / Linux (Terminal)
+Apri il terminale ed esegui:
+```bash
+curl -fsSL https://raw.githubusercontent.com/Marcelloguida00/multiagent-academic-paper/main/install.sh | bash
+```
+
+Oppure manualmente se hai già clonato:
+```bash
+# 1. Copia sembra-ai come skill autonoma di primo livello
+mkdir -p ~/.claude/skills/sembra-ai ~/.claude/commands
+cp ~/.claude/skills/agenzia-multiagente/skills/sembra-ai/SKILL.md ~/.claude/skills/sembra-ai/
+cp ~/.claude/skills/agenzia-multiagente/.claude/commands/*.md ~/.claude/commands/
+```
+
+> ⚠️ **Importante**: Dopo aver installato o aggiornato le skill, **riavvia Claude Code** o avvia una **nuova sessione** per far rilevare a Claude i nuovi comandi e le skill.
+
+---
+
 ## 👥 I Ruoli dell'Agenzia Multi-Agente
 
 Claude suddivide autonomamente il lavoro tra 5 ruoli specializzati:
@@ -38,38 +77,6 @@ Claude suddivide autonomamente il lavoro tra 5 ruoli specializzati:
 - **Font e Tipografia Accademica**: Strutturato per la compilazione in LaTeX con i font standard delle conferenze (Computer Modern / Times New Roman).
 - **Controllo Bibliografico Reale**: Tutte le fonti citate devono essere reali e rintracciabili tramite DOI o ArXiv ID.
 - **Passaggio Obbligatorio in `/sembra-ai`**: Nessun paragrafo viene finalizzato senza aver superato il de-slopping stilistico.
-
----
-
-## 📦 Installazione in Claude
-
-### 1. Claude Code (Installazione Globale Personale)
-Clona la skill nella cartella delle skill di Claude Code:
-
-```bash
-git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git ~/.claude/skills/agenzia-multiagente
-```
-
-Per abilitare anche i comandi slash rapidi (`/agenzia-multiagente` e `/sembra-ai`):
-```bash
-mkdir -p ~/.claude/commands
-cp ~/.claude/skills/agenzia-multiagente/.claude/commands/*.md ~/.claude/commands/
-```
-
-### 2. Claude Code (Per un Singolo Progetto)
-Se desideri utilizzarla all'interno di una cartella o repository specifica:
-
-```bash
-git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git .claude/skills/agenzia-multiagente
-mkdir -p .claude/commands
-cp .claude/skills/agenzia-multiagente/.claude/commands/*.md .claude/commands/
-```
-
-Claude Code rileverà automaticamente anche il file `CLAUDE.md` presente nella radice.
-
-### 3. Claude.ai (Web o Desktop)
-1. Apri un **Project** su Claude.ai.
-2. Aggiungi il file `SKILL.md` o `CLAUDE.md` ai **Project Knowledge** o copia il testo nelle **Custom Instructions**.
 
 ---
 
