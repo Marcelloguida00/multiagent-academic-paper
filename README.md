@@ -5,7 +5,7 @@
 [![Slash Command](https://img.shields.io/badge/Slash%20Command-%2Fagenzia--multiagente-orange.svg)]()
 [![Anti-AI Filter](https://img.shields.io/badge/Anti--AI%20Filter-%2Fsembra--ai-brightgreen.svg)]()
 
-Un'architettura completa a plugin che implementa il comando principale **`/agenzia-multiagente`** per orchestrare una squadra autonoma di agenti specializzati nella ricerca bibliografica scientifica, formalizzazione concettuale e redazione di **paper accademici** (stile IEEE / ACM / Springer), integrata nativamente con il filtro di humanization e de-slopping **`/sembra-ai`**.
+Suite completa a plugin che implementa **`/agenzia-multiagente`** per orchestrare una squadra autonoma di agenti specializzati nella ricerca bibliografica avanzata, formalizzazione concettuale e redazione di **paper accademici peer-reviewed** (stile IEEE / ACM / Springer), integrata nativamente con il filtro anti-AI e de-slopping **`/sembra-ai`**.
 
 ---
 
@@ -13,7 +13,7 @@ Un'architettura completa a plugin che implementa il comando principale **`/agenz
 
 | Comando | Descrizione |
 | :--- | :--- |
-| **`/agenzia-multiagente`** | Dispiega e coordina i 5 agenti specialistici per condurre la ricerca bibliografica, standardizzare la terminologia e redigere il paper scientifico. |
+| **`/agenzia-multiagente`** | Dispiega e coordina i 5 agenti specialistici per condurre la ricerca bibliografica SOTA, standardizzare la terminologia e redigere il paper scientifico. |
 | **`/sembra-ai`** | Filtro di qualità anti-AI: revisiona ed elimina cliché, formule fisse, pattern simmetrici e regolarità tipiche degli LLM, garantendo uno stile autentico, critico e umano. |
 
 ---
@@ -52,17 +52,91 @@ git clone https://github.com/Marcelloguida00/multiagent-academic-paper.git .gemi
 
 ---
 
-## 📋 Prompt Rapido di Avvio
+## 📋 Master Prompt Completo di Esecuzione
 
-Una volta caricato il plugin, digita semplicemente:
+Copia e invia il seguente prompt per avviare il processo completo:
 
 ```markdown
-/agenzia-multiagente Ricerca e scrivi un paper accademico approfondito sulle architetture dei sistemi multi-agente autonomi.
+# MISSION: ORCHESTRAZIONE MULTI-AGENTE PER LA REDAZIONE DI UN ACCADEMIC PAPER SCIENTIFICO (/agenzia-multiagente)
 
-Assicurati che:
-1. Ogni termine informale o strambo sia convertito in tassonomia formale.
-2. Vengano citate unicamente fonti bibliografiche reali con DOI o ArXiv ID.
-3. Il paper sia predisposto con font formali per LaTeX (Times / Computer Modern).
-4. Nessun riferimento a tool, prompt o skill software interne appaia nel testo.
-5. Ogni sezione passi attraverso la revisione di /sembra-ai per eliminare qualunque traccia di stile AI.
+Attiva l'agenzia tramite `/agenzia-multiagente` e agisci come Direttore di Ricerca e Lead Prompt Engineer. Il tuo obiettivo è condurre la ricerca bibliografica avanzata e redigere un Academic Paper formale, rigoroso e originale incentrato su:
+"Architetture, Pattern di Coordinamento ed Efficacia Operativa delle Agenzie Multi-Agente Autonome".
+
+Il paper è destinato a una conferenza/evento scientifico di settore.
+
+---
+
+## 1. COMPOSIZIONE E RUOLI DELLA SQUADRA AGENTICA (/agenzia-multiagente)
+
+Coordina i seguenti agenti specializzati, delegando i compiti e garantendo passaggi di testimone senza perdita di contesto:
+
+1. **Lead Researcher & Citation Specialist (Agente Ricerca)**:
+   - Scansiona lo stato dell'arte (SOTA): articoli seminali (da ArXiv, IEEE, ACM, NeurIPS, ICLR), benchmark e metodologie di cooperazione multi-agente.
+   - Cataloga rigorosamente ogni **fonte bibliografica** con autore, anno, titolo, conferenza/journal e identificatore univoco (DOI/ArXiv ID).
+   - Nessuna allucinazione: ogni affermazione tecnica deve poggiare su una fonte reale e verificabile.
+
+2. **System Ontologist & Architect (Agente Architettura & Tassonomia)**:
+   - Bonifica il lessico: identifica ed elimina nomi goffi, termini colloquiali, traduzioni strambe o nomi arbitrari di plugin/skill.
+   - Stabilisce un'ontologia accademica formale (es. sostituisce "agente che fa x" con "Autonomous Orchestration Unit", "bacheca messaggi" con "Shared Blackboard Protocol / Blackboard Pattern", ecc.).
+
+3. **Academic Author & Formatter (Agente Redazione)**:
+   - Struttura il paper secondo lo standard IMRaD (Abstract, Introduction, Related Work, System Architecture & Taxonomy, Evaluation & Case Studies, Limitations & Future Work, Conclusion, References).
+   - Definisce e applica le linee guida tipografiche del paper (impiego di font formali come Times New Roman / Computer Modern in formato LaTeX / PDF).
+   - **REGOLA INVIOLABILE**: NON citare MAI tool interni, prompt di sistema o nomi di skill software interne nel testo del paper. Tutto deve essere descritto in termini di principi architetturali, algoritmi e metodologie formali.
+
+4. **Humanizer & Anti-AI Quality Gatekeeper (Agente Filtro /sembra-ai)**:
+   - Ogni singola sezione DEVE superare il vaglio di questo agente prima di essere considerata definitiva.
+   - Elimina la "firma stilistica" tipica degli LLM:
+     - Niente frasi a formula trita ("Nel panorama odierno", "È cruciale sottolineare", "Approfondiamo ora", "Un arazzo di...", "Un faro di innovazione").
+     - Variazione radicale della lunghezza delle frasi (alternanza tra periodi analitici e proposizioni corte e perentorie).
+     - Ristrutturazione delle transizioni logiche affinché suonino naturali, con argomentazioni asimmetriche e voce critica propria di un ricercatore umano.
+
+5. **Tool & Skill Engineer (Agente Meta-Tooling)**:
+   - Se durante la ricerca o la stesura emerge la necessità di un tool o di una skill specialistica assente nell'ambiente, formalizzane la specifica, crea il modulo/script ed esegui l'integrazione nell'ambiente di lavoro.
+   - Se tale capacità rappresenta un contributo concettuale del paper, integrala nell'articolo descrivendola esclusivamente come componente architetturale/modulo software open-source (senza riferimenti al runtime locale o alla piattaforma agentica).
+
+---
+
+## 2. WORKFLOW OPERATIVO FASE PER FASE
+
+Esegui il lavoro sequenzialmente attraverso 5 gate di approvazione:
+
+### FASE 1: Ricerca SOTA & Definizione Tassonomia (/agenzia-multiagente)
+- Mappa lo stato dell'arte sulle architetture multi-agente (es. Society of Mind, Blackboard Pattern, ReAct distribuito, consenso federato, dinamiche supervisor-worker).
+- Compila la tabella di conversione terminologica: [Termine Volgare/Banalità] -> [Termine Accademico Rigoroso].
+- Verifica delle fonti: stila un primo indice bibliografico annotato.
+
+### FASE 2: Progettazione Struttura e Architettura del Paper
+- Redigi l'abstract e l'outline dettagliato sezione per sezione.
+- Identifica se servono skill analitiche o tool di benchmark aggiuntivi; se necessario, creali e testali.
+
+### FASE 3: Stesura delle Sezioni
+- Redigi ciascuna sezione integrando diagrammi architetturali (in sintassi Mermaid/TikZ), formalizzazioni e citazioni bibliografiche nel formato standard IEEE/APA.
+
+### FASE 4: Revisione Obbligatoria Anti-AI (Il Protocollo /sembra-ai)
+- Sottoponi ogni paragrafo al filtro di de-slopping e riscrittura stilistica `/sembra-ai`.
+- Verifica il ritmo, la cadenza sintattica e il lessico critico.
+
+### FASE 5: Consolidamento Finale & Tracciamento Fonti
+- Unifica il paper completo.
+- Verifica che:
+  a) Tutte le fonti citate nel testo siano presenti nell'elenco Referenze con metadati completi.
+  b) Nessun riferimento interno a skill/plugin sia trapelato nel corpo del testo.
+  c) I font e lo styling siano pronti per la compilazione in formato accademico.
+
+---
+
+## 3. REGOLA DI INIZIO
+Prima di generare il testo del paper, il **Prompt Engineer & Lead Coordinator** deve presentare:
+1. L'indice accademico proposto (Outline).
+2. La mappatura terminologica (bonifica dei nomi).
+3. L'elenco preliminare delle fonti scientifiche di riferimento.
+
+Attendi la conferma dell'utente prima di passare alla stesura completa.
 ```
+
+---
+
+## 📄 Licenza
+
+Rilasciato sotto licenza MIT. Libero per uso di ricerca, accademico e industriale.
