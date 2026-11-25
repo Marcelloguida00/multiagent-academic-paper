@@ -39,6 +39,10 @@ Quando viene lanciato `/agenzia-multiagente`, il sistema coordina:
    - Crea e installa on-the-fly eventuali script o skill mancanti necessarie alla ricerca.
    - Formalizza i moduli creati come contributi architetturali all'interno del paper.
 
+6. **Human Guidelines Engineer (`Quinn` / `/human-guidelines-engineer`)**:
+   - Entra quando il lavoro tocca interfacce, app o design multi-piattaforma.
+   - Legge Apple HIG e Samsung Design System / One UI e verifica conformità operativa.
+
 ---
 
 ## Flusso Operativo di /agenzia-multiagente

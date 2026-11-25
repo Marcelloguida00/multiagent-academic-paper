@@ -1,11 +1,12 @@
 {
   "name": "multiagent-academic-paper",
   "displayName": "Agenzia Multi-Agente & Academic Paper Suite",
-  "version": "1.1.0",
-  "description": "Suite multi-agente per la ricerca bibliografica avanzata e stesura di paper accademici scientifici basata sul comando /agenzia-multiagente e sul filtro anti-AI /sembra-ai.",
+  "version": "1.2.0",
+  "description": "Suite multi-agente per ricerca bibliografica, paper scientifici, filtro anti-AI (/sembra-ai) e Human Guidelines Engineer (Quinn: Apple HIG + Samsung Design System).",
   "suggestedPrompts": [
     "/agenzia-multiagente ricerca e scrivi un paper accademico sui sistemi multi-agente",
     "/agenzia-multiagente definisci lo stato dell'arte e la tabella di bonifica terminologica",
-    "/sembra-ai revisiona la bozza per eliminare pattern stilistici dell'AI"
+    "/sembra-ai revisiona la bozza per eliminare pattern stilistici dell'AI",
+    "/human-guidelines-engineer revisiona questa schermata contro Apple HIG e Samsung One UI"
   ]
 }
